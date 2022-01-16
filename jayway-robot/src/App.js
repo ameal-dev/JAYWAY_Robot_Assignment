@@ -33,10 +33,6 @@ function App() {
   };
 
   const handleClick = (e) => {
-    console.log(
-      `xAxis:${xAxis}, yAxis:${yAxis},robotXLoc:${robotXLocation},robotYloc:${robotYLocation},robotDir:${robotDirection} Inst:${instruction}`
-    );
-
     const axisX = xAxis;
     const axisY = yAxis;
     let x = robotXLocation;
@@ -46,12 +42,8 @@ function App() {
     validationFunc(axisX, axisY, x, y);
 
     const instArr = instruction.toUpperCase().split("");
-    console.log(instArr);
 
     instArr.forEach((inst) => {
-      console.log("instruction:", inst);
-      console.log("current direction:", dir);
-
       //Check for adjustment to direction instruction
       if (inst == "L") {
         if (dir == "N") {
@@ -75,7 +67,6 @@ function App() {
           dir = "S";
         }
       }
-      console.log("new direction:", dir);
 
       //Movement
       if (inst == "F" && dir == "E" && x < xAxis) {
@@ -90,8 +81,6 @@ function App() {
       if (inst == "F" && dir == "N" && y > 0) {
         y--;
       }
-
-      console.log(x, y, dir);
     });
 
     setRobotYLocation(y);
