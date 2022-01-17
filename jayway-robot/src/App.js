@@ -33,16 +33,20 @@ function App() {
   };
 
   const handleClick = (e) => {
+    //assign new variables to refrain from updating state in a loop
     const axisX = xAxis;
     const axisY = yAxis;
     let x = robotXLocation;
     let y = robotYLocation;
     let dir = robotDirection;
 
+    //run validation to confirm wheter parameters are valid
     validationFunc(axisX, axisY, x, y);
 
+    //Create an array from the instruction-string. Making it uppercase to handle both lower and upper-case letters.
     const instArr = instruction.toUpperCase().split("");
 
+    //loop through the instruction-array to determine appropriate action
     instArr.forEach((inst) => {
       //Check for adjustment to direction instruction
       if (inst == "L") {
@@ -83,6 +87,7 @@ function App() {
       }
     });
 
+    //Update state with corresponding robot location after the loop has been run through
     setRobotYLocation(y);
     setRobotXLocation(x);
     setRobotDirection(dir);
