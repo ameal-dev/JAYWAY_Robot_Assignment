@@ -15,8 +15,6 @@ function App() {
     instructions: "",
   });
 
-  const [showResults, setShowResults] = useState(false);
-
   //Validation function to check wheter input is valid
   const validationFunc = (xaxis, yaxis, locx, locy, dir) => {
     //check that room x- and y-axis are of valid inputs
