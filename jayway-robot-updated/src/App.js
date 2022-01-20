@@ -35,8 +35,6 @@ function App() {
   };
 
   const handleClick = () => {
-    validationFunc(room.xAxis, room.yAxis, robot.x, robot.y, robot.direction);
-
     let x = robot.x;
     let y = robot.y;
     let dir = robot.direction;
