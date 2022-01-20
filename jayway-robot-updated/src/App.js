@@ -171,7 +171,6 @@ function App() {
           )
             ? `(x,y,direction) = (${robot.x},${robot.y},${robot.direction})`
             : `Invalid/undefined input`}
-          {/* (x,y,direction) = ({robot.x},{robot.y},{robot.direction}) */}
         </div>
       </header>
     </div>
